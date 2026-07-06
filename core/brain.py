@@ -1,6 +1,7 @@
 from core.intent import IntentDetector
 from core.router import CommandRouter    
-from memory.memory_manager import MemoryManager   
+from memory.memory_manager import MemoryManager  
+from skills.memory_skill import MemorySkill 
 
 class Brain:
     def __init__(self):
@@ -8,8 +9,14 @@ class Brain:
         self.intent = IntentDetector()
         self.router = CommandRouter()
         self.memory = MemoryManager()
+        self.memory_skill = MemorySkill(self.memory)
         
     def think(self, user_input):
+        response = self.memory_skill.handle(user_input)
+
+        if response:
+            return response
+            
         text = user_input.strip()
         lower = text.lower()
         

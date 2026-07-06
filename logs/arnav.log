@@ -140,3 +140,12 @@
 2026-07-06 22:39:46,533 | INFO | Arnav : Hello Anuj! \U0001f44b
 2026-07-06 22:39:56,633 | INFO | User : what is my name
 2026-07-06 22:39:56,635 | INFO | Arnav : Your name is anuj.
+2026-07-06 23:06:57,592 | INFO | Assistant Started
+2026-07-06 23:07:22,240 | INFO | User : my name is anuj
+2026-07-06 23:07:22,245 | INFO | Arnav : Nice to meet you, anuj! I'll remember your name.
+2026-07-06 23:07:30,288 | INFO | User :  what is my name 
+2026-07-06 23:07:30,288 | INFO | Arnav : Your name is anuj.
+2026-07-06 23:07:37,368 | INFO | User : forget my name 
+2026-07-06 23:07:37,370 | INFO | Arnav : Okay, I've forgotten your name.
+2026-07-06 23:07:46,880 | INFO | User :   what is my name
+2026-07-06 23:07:46,881 | INFO | Arnav : I don't know your name yet.
