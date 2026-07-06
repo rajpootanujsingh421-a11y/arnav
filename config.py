@@ -1,11 +1,5 @@
-class Config:
-    APP_NAME = "Arnav AI"
-    ASSISTANT_NAME = "Arnav"
-    VERSION = "0.1.0"
-    AUTHOR = "Anuj Rajpoot"
+APP_NAME = "Arnav"
+VERSION = "0.1.0"
     
-    STATUS = "ONLINE"
-    LANGUAGE = "en"
-    
-    DEBUG = True
-    
+MEMORY_FILE = "data/memory.json"
+MAX_SHORT_MEMORY = 20

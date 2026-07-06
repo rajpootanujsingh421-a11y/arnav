@@ -116,3 +116,27 @@
 2026-07-06 21:40:17,619 | INFO | Arnav : 09:40:17 PM
 2026-07-06 21:40:22,751 | INFO | User : exit
 2026-07-06 21:40:22,752 | INFO | Assistant Closed
+2026-07-06 21:55:57,543 | INFO | Assistant Started
+2026-07-06 21:56:14,567 | INFO | User : hello
+2026-07-06 21:56:14,572 | INFO | Arnav : Hello Anuj! \U0001f44b
+2026-07-06 21:56:47,643 | INFO | Assistant Started
+2026-07-06 21:59:00,625 | INFO | Assistant Started
+2026-07-06 21:59:57,743 | INFO | Assistant Started
+2026-07-06 22:00:04,330 | INFO | User : hello
+2026-07-06 22:00:04,331 | INFO | Arnav : Hello Anuj! \U0001f44b
+2026-07-06 22:12:35,685 | INFO | Assistant Started
+2026-07-06 22:12:58,878 | INFO | User : my name is anuj
+2026-07-06 22:15:12,890 | INFO | Assistant Started
+2026-07-06 22:15:18,762 | INFO | User : my name anuj
+2026-07-06 22:15:18,763 | INFO | Arnav : Sorry, I don't understand that command.
+2026-07-06 22:16:08,818 | INFO | User : my name is anuj
+2026-07-06 22:16:08,821 | INFO | Arnav : Nice to meet you, anuj! I'll remember your name.
+2026-07-06 22:16:30,198 | INFO | User : what is my name
+2026-07-06 22:16:30,199 | INFO | Arnav : Your name is anuj.
+2026-07-06 22:17:48,394 | INFO | User : my favorite lagauge is python
+2026-07-06 22:17:48,395 | INFO | Arnav : Sorry, I don't understand that command.
+2026-07-06 22:39:41,067 | INFO | Assistant Started
+2026-07-06 22:39:46,529 | INFO | User : HELLO
+2026-07-06 22:39:46,533 | INFO | Arnav : Hello Anuj! \U0001f44b
+2026-07-06 22:39:56,633 | INFO | User : what is my name
+2026-07-06 22:39:56,635 | INFO | Arnav : Your name is anuj.

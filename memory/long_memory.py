@@ -1,13 +1,45 @@
+import json
+from config import MEMORY_FILE
+import os
 class LongMemory:
-    
+
     def __init__(self):
-        self.data = {}
+
+        self.file_path = "data/memory.json"
+        self.file_path = MEMORY_FILE
+
+        if not os.path.exists(self.file_path):
+            with open(self.file_path, "w") as file:
+                json.dump({}, file)
 
     def save(self, key, value):
-        self.data[key] = value
+
+        with open(self.file_path, "r") as file:
+            data = json.load(file)
+
+        data[key] = value
+
+        with open(self.file_path, "w") as file:
+            json.dump(data, file, indent=4)
 
     def load(self, key):
-        return self.data.get(key)
+
+        with open(self.file_path, "r") as file:
+            data = json.load(file)
+
+        return data.get(key)
+    def delete(self, key):
+    
+        with open(self.file_path, "r") as file:
+            data = json.load(file)
+
+        if key in data:
+            del data[key]
+
+        with open(self.file_path, "w") as file:
+            json.dump(data, file, indent=4)
 
     def all(self):
-        return self.data
+
+        with open(self.file_path, "r") as file:
+            return json.load(file)
