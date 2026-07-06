@@ -149,3 +149,29 @@
 2026-07-06 23:07:37,370 | INFO | Arnav : Okay, I've forgotten your name.
 2026-07-06 23:07:46,880 | INFO | User :   what is my name
 2026-07-06 23:07:46,881 | INFO | Arnav : I don't know your name yet.
+2026-07-06 23:18:52,751 | INFO | Assistant Started
+2026-07-06 23:19:01,147 | INFO | User : hello
+2026-07-06 23:19:01,150 | INFO | Arnav : Hello Anuj! \U0001f44b
+2026-07-06 23:19:10,940 | INFO | User : good morning
+2026-07-06 23:19:10,942 | INFO | Arnav : Good morning, Anuj! \U0001f60a Hope you have an amazing day.
+2026-07-06 23:19:19,944 | INFO | User : how are you
+2026-07-06 23:19:19,944 | INFO | Arnav : I'm doing great! Thanks for asking. How are you?
+2026-07-06 23:19:27,504 | INFO | User :  thank you 
+2026-07-06 23:19:27,504 | INFO | Arnav : You're always welcome, Anuj! \U0001f60a
+2026-07-06 23:19:32,384 | INFO | User :  bye 
+2026-07-06 23:19:32,385 | INFO | Arnav : Goodbye Anuj! Take care.
+2026-07-06 23:40:25,829 | INFO | Assistant Started
+2026-07-06 23:40:33,554 | INFO | User : hello
+2026-07-06 23:40:33,556 | INFO | Arnav : Hello Anuj! \U0001f44b
+2026-07-06 23:40:40,207 | INFO | User : my name ia anuj
+2026-07-06 23:40:40,208 | INFO | Arnav : Sorry, I don't understand that command.
+2026-07-06 23:40:48,460 | INFO | User : my name is anuj
+2026-07-06 23:40:48,463 | INFO | Arnav : Nice to meet you, anuj! I'll remember your name.
+2026-07-06 23:40:57,026 | INFO | User : what is my name
+2026-07-06 23:40:57,027 | INFO | Arnav : Your name is anuj.
+2026-07-06 23:40:59,871 | INFO | User : time
+2026-07-06 23:40:59,871 | INFO | Arnav : 11:40:59 PM
+2026-07-06 23:41:05,480 | INFO | User : date
+2026-07-06 23:41:05,481 | INFO | Arnav : 06-07-2026
+2026-07-06 23:41:11,362 | INFO | User : exit
+2026-07-06 23:41:11,363 | INFO | Assistant Closed
