@@ -5,6 +5,8 @@ from skills.skill_manager import SkillManager
 from skills.memory_skill import MemorySkill 
 from skills.conversation_skill import ConversationSkill
 from skills.system_skill import SystemSkill
+from skills.emotion_skill import EmotionSkill
+from skills.memory_inspector_skill import MemoryInspectorSkill
 
 class Brain:
     def __init__(self):
@@ -15,8 +17,10 @@ class Brain:
         self.skill_manager = SkillManager()
         
         self.skill_manager.register(MemorySkill(self.memory))
-        self.skill_manager.register(ConversationSkill())  
-        self.skill_manager.register(SystemSkill())  
+        self.skill_manager.register(ConversationSkill(self.memory))
+        self.skill_manager.register(SystemSkill())
+        self.skill_manager.register(EmotionSkill(self.memory))
+        self.skill_manager.register(MemoryInspectorSkill(self.memory))
         
     def think(self, user_input):
         self.memory.short.add("user", user_input)

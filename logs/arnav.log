@@ -222,3 +222,31 @@ Created to become a human-like intelligent assistant.
 2026-07-07 09:55:38,846 | INFO | Assistant Started
 2026-07-07 09:55:40,926 | INFO | User : hello
 2026-07-07 09:55:40,927 | INFO | Arnav : Hello Anuj! \U0001f44b
+2026-07-07 10:09:58,032 | INFO | Assistant Started
+2026-07-07 10:10:08,302 | INFO | User : my name is rohit
+2026-07-07 10:10:08,307 | INFO | Arnav : Nice to meet you, rohit! I'll remember your name.
+2026-07-07 10:10:12,297 | INFO | User : hello
+2026-07-07 10:10:12,299 | INFO | Arnav : Hello rohit! \U0001f44b
+2026-07-07 10:10:20,681 | INFO | User : forget my name
+2026-07-07 10:10:20,684 | INFO | Arnav : Okay, I've forgotten your name.
+2026-07-07 10:10:26,145 | INFO | User : hello
+2026-07-07 10:10:26,147 | INFO | Arnav : Hello Anuj! \U0001f44b
+2026-07-07 10:21:00,661 | INFO | Assistant Started
+2026-07-07 10:21:14,597 | INFO | User : I am happy today
+2026-07-07 10:21:14,600 | INFO | Arnav : Oops! Something went wrong while processing your request.
+2026-07-07 10:22:07,024 | INFO | Assistant Started
+2026-07-07 10:22:13,973 | INFO | User : i am happy today
+2026-07-07 10:22:13,974 | INFO | Arnav : Oops! Something went wrong while processing your request.
+2026-07-07 10:24:24,521 | INFO | Assistant Started
+2026-07-07 10:24:31,289 | INFO | User : i am happy today
+2026-07-07 10:24:31,290 | INFO | Arnav : I'm really happy to hear that! \U0001f60a
+2026-07-07 10:24:48,217 | INFO | User : what is my mood 
+2026-07-07 10:24:48,217 | INFO | Arnav : Your current mood is happy.
+2026-07-07 10:28:51,773 | INFO | Assistant Started
+2026-07-07 10:28:58,973 | INFO | User : my name is anuj
+2026-07-07 10:28:58,978 | INFO | Arnav : Nice to meet you, anuj! I'll remember your name.
+2026-07-07 10:29:08,085 | INFO | User :  i am happy today
+2026-07-07 10:29:08,088 | INFO | Arnav : I'm really happy to hear that! \U0001f60a
+2026-07-07 10:29:11,157 | INFO | User :  hello
+2026-07-07 10:29:11,158 | INFO | Arnav : Hello anuj! \U0001f44b
+2026-07-07 10:29:16,917 | INFO | User :  show memory
