@@ -1,13 +1,13 @@
-from config import APP_NAME, VERSION
+from config import Config
 from utils.logger import logger
 from core.brain import Brain    
 from core.response import Response
 
 class ArnavAssistant:   
     def __init__(self):
-        self.name = APP_NAME
-        self.version = VERSION
-        self.status = "ONLINE"
+        self.name = Config.APP_NAME
+        self.version = Config.VERSION
+        self.status = Config.STATUS
         
         self.brain = Brain()
 

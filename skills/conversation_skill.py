@@ -1,4 +1,8 @@
+from personality.personality import Personality
 class ConversationSkill:
+    
+    def __init__(self):
+        self.personality = Personality()
     
     def handle(self, user_input):
 
@@ -16,26 +20,26 @@ class ConversationSkill:
         if text in greetings:
 
             if text == "good morning":
-                return "Good morning, Anuj! 😊 Hope you have an amazing day."
+                return f"Good morning, {self.personality.owner}! 😊 Hope you have an amazing day."
 
             elif text == "good evening":
-                return "Good evening, Anuj! How was your day?"
+                return f"Good evening, {self.personality.owner}! How was your day?"
 
             elif text == "good afternoon":
-                return "Good afternoon, Anuj!"
+                return f"Good afternoon, {self.personality.owner}!"
 
-            return "Hello Anuj! 👋"
+            return f"Hello {self.personality.owner}! 👋"
 
         elif text in ["thanks", "thank you"]:
 
-            return "You're always welcome, Anuj! 😊"
+            return f"You're always welcome, {self.personality.owner}! 😊"
 
         elif text in ["how are you", "how are you?"]:
 
-            return "I'm doing great! Thanks for asking. How are you?"
+            return f"I'm doing great! Thanks for asking. How are you?"
 
         elif text in ["bye", "goodbye"]:
 
-            return "Goodbye Anuj! Take care."
+            return f"Goodbye {self.personality.owner}! Take care."
 
         return None

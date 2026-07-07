@@ -175,3 +175,50 @@
 2026-07-06 23:41:05,481 | INFO | Arnav : 06-07-2026
 2026-07-06 23:41:11,362 | INFO | User : exit
 2026-07-06 23:41:11,363 | INFO | Assistant Closed
+2026-07-07 09:21:00,895 | INFO | Assistant Started
+2026-07-07 09:21:14,111 | INFO | User : help
+2026-07-07 09:21:14,112 | INFO | Arnav : Available Commands:
+- hello
+- time
+- date
+- version
+- status
+- about
+- exit
+
+2026-07-07 09:21:21,807 | INFO | User : version
+2026-07-07 09:21:21,808 | INFO | Arnav : Arnav Version : 0.1.0
+2026-07-07 09:21:25,704 | INFO | User : status
+2026-07-07 09:21:25,704 | INFO | Arnav : Status : ONLINE
+2026-07-07 09:21:29,531 | INFO | User : about
+2026-07-07 09:21:29,532 | INFO | Arnav : I am Arnav AI.
+Created to become a human-like intelligent assistant.
+2026-07-07 09:23:20,974 | INFO | Assistant Started
+2026-07-07 09:23:26,227 | INFO | User : hello
+2026-07-07 09:23:26,230 | INFO | Arnav : Hello Anuj! \U0001f44b
+2026-07-07 09:23:39,339 | INFO | User : what is my name
+2026-07-07 09:23:39,342 | INFO | Arnav : Your name is anuj.
+2026-07-07 09:23:43,731 | INFO | User : time
+2026-07-07 09:23:43,733 | INFO | Arnav : 09:23:43 AM
+2026-07-07 09:23:46,937 | INFO | User : date
+2026-07-07 09:23:46,938 | INFO | Arnav : 07-07-2026
+2026-07-07 09:23:50,583 | INFO | User : exit
+2026-07-07 09:23:50,584 | INFO | Assistant Closed
+2026-07-07 09:36:05,020 | INFO | Assistant Started
+2026-07-07 09:36:10,939 | INFO | User : crash
+2026-07-07 09:36:10,940 | INFO | Arnav : Sorry, I don't understand that command.
+2026-07-07 09:36:57,497 | INFO | Assistant Started
+2026-07-07 09:37:00,860 | INFO | User : crash
+2026-07-07 09:37:00,861 | INFO | Arnav : Sorry, I don't understand that command.
+2026-07-07 09:38:28,208 | INFO | Assistant Started
+2026-07-07 09:38:31,339 | INFO | User : crash
+2026-07-07 09:38:31,340 | INFO | Arnav : Oops! Something went wrong while processing your request.
+2026-07-07 09:52:34,591 | INFO | Assistant Started
+2026-07-07 09:52:39,150 | INFO | User : hello
+2026-07-07 09:52:39,152 | INFO | Arnav : Hello {self.personality.owner}! \U0001f44b
+2026-07-07 09:53:51,926 | INFO | Assistant Started
+2026-07-07 09:53:54,547 | INFO | User : hello
+2026-07-07 09:53:54,548 | INFO | Arnav : Hello {self.personality.owner}! \U0001f44b
+2026-07-07 09:55:38,846 | INFO | Assistant Started
+2026-07-07 09:55:40,926 | INFO | User : hello
+2026-07-07 09:55:40,927 | INFO | Arnav : Hello Anuj! \U0001f44b

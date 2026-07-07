@@ -1,12 +1,12 @@
 import json
-from config import MEMORY_FILE
+from config import Config
 import os
 class LongMemory:
 
     def __init__(self):
 
         self.file_path = "data/memory.json"
-        self.file_path = MEMORY_FILE
+        self.file_path = Config.MEMORY_FILE
 
         if not os.path.exists(self.file_path):
             with open(self.file_path, "w") as file:

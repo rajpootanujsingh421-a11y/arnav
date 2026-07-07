@@ -1,6 +1,7 @@
 class Personality:
     def __init__(self):
         self.name = "Arnav"
+        self.owner = "Anuj"
 
         self.identity = {
             "kind": True,
