@@ -1,9 +1,19 @@
 from providers.gemini_provider import GeminiProvider
+from providers.offline_provider import OfflineProvider
+
 
 class ProviderManager:
 
     def __init__(self):
-        self.provider = GeminiProvider()
+        self.gemini = GeminiProvider()
+        self.offline = OfflineProvider()
 
     def generate(self, prompt: str):
-        return self.provider.generate(prompt)
+
+        try:
+            return self.gemini.generate(prompt)
+
+        except Exception as e:
+            print(f"[Provider Error] {e}")
+
+            return self.offline.generate(prompt)

@@ -37,11 +37,6 @@ class Brain:
     def think(self, user_input):
         self.memory.short.add("user", user_input)
         
-        last_message = self.context.get_last_message()
-
-        if last_message:
-            print("[Context]", last_message)
-        
         try:
             response = self.skill_manager.execute(user_input)
             

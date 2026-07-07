@@ -23,31 +23,20 @@ class PromptBuilder:
 
         for item in history:
             conversation += f"{item['role']}: {item['content']}\n"
+            
+        system_prompt = self.personality.system_prompt()
 
         prompt = f"""
-You are {self.personality.name}.
+        {system_prompt}
 
-Never say you are Gemini, Google AI or an AI language model.
+        Current Emotion:
+        {emotion}
 
-You are a personal AI assistant.
+        Recent Conversation:
+        {conversation}
 
-Owner: {name}
-
-Personality:
-- Friendly
-- Calm
-- Honest
-- Helpful
-- Intelligent
-
-Current Emotion:
-{emotion}
-
-Recent Conversation:
-{conversation}
-
-User:
-{user_input}
-"""
+        User:
+        {user_input}
+        """
 
         return prompt
