@@ -13,6 +13,7 @@ from core.prompt_builder import PromptBuilder
 from personality.personality import Personality
 from core.validator import ResponseValidator
 from memory.extractor import MemoryExtractor
+from core.thinking_engine import ThinkingEngine
 
 class Brain:
     def __init__(self):
@@ -31,6 +32,7 @@ class Brain:
         )
         self.validator = ResponseValidator()
         self.extractor = MemoryExtractor()  
+        self.thinking = ThinkingEngine(self)    
         
         self.skill_manager.register(MemorySkill(self.memory))
         self.skill_manager.register(ConversationSkill(self.memory))
@@ -47,31 +49,6 @@ class Brain:
             key, value = memory
             self.memory.long.save(key, value)
         
-        try:
-            response = self.skill_manager.execute(user_input)
-            
-            if response:
-                self.memory.short.add("assistant", response)
-                return response
+        response = self.thinking.think(user_input)
         
-        except Exception as e:
-            print(f"[Skill Error] {e}")
-            return "Oops! Something went wrong while processing your request."
-        
-        try:
-            intent = self.intent.detect(user_input)
-            response = self.router.execute(intent)
-            
-        except Exception as e:
-            print(f"[Router Error] {e}")
-            response = "Sorry, I couldn't process that request."
-            
-        if response == "Sorry, I don't understand that command.":
-                prompt = self.prompt_builder.build(user_input)
-                response = self.provider.generate(prompt)
-                response = self.validator.validate(response)
-            
-        self.memory.short.add("assistant", response)
-
         return response
-    
