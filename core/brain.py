@@ -9,16 +9,24 @@ from skills.emotion_skill import EmotionSkill
 from skills.memory_inspector_skill import MemoryInspectorSkill
 from core.context import ContextEngine
 from providers.provider_manager import ProviderManager
+from core.prompt_builder import PromptBuilder
+from personality.personality import Personality
 
 class Brain:
     def __init__(self):
         
         self.intent = IntentDetector()
-        self.router = CommandRouter()   
+        self.router = CommandRouter()           
         self.memory = MemoryManager()
         self.context = ContextEngine(self.memory)
         self.provider = ProviderManager()
         self.skill_manager = SkillManager()
+        self.personality = Personality()
+        self.prompt_builder = PromptBuilder(
+            self.memory,
+            self.personality,
+            self.context
+        )
         
         self.skill_manager.register(MemorySkill(self.memory))
         self.skill_manager.register(ConversationSkill(self.memory))
@@ -54,7 +62,8 @@ class Brain:
             response = "Sorry, I couldn't process that request."
             
         if response == "Sorry, I don't understand that command.":
-            response = self.provider.generate(user_input)
+                prompt = self.prompt_builder.build(user_input)
+                response = self.provider.generate(prompt)
             
         self.memory.short.add("assistant", response)
 

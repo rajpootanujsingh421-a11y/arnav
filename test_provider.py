@@ -1,7 +1,12 @@
-from providers.provider_manager import ProviderManager
+from core.prompt_builder import PromptBuilder
+from memory.memory_manager import MemoryManager
+from personality.personality import Personality
+from core.context import ContextEngine
 
-provider = ProviderManager()
+memory = MemoryManager()
+personality = Personality()
+context = ContextEngine(memory)
 
-response = provider.generate("Hello Arnav")
+builder = PromptBuilder(memory, personality, context)
 
-print(response)
+print(builder.build("What is Artificial Intelligence?"))

@@ -286,3 +286,52 @@ Emotion : happy
 2026-07-07 13:58:05,729 | INFO | User : hello
 2026-07-07 13:58:05,732 | INFO | Arnav : Hello anuj! \U0001f44b
 2026-07-07 13:58:31,888 | INFO | User : what is Artificial Intelligence?
+2026-07-07 13:58:31,889 | INFO | Arnav : I am currently running in offline mode.
+2026-07-07 14:39:51,326 | INFO | Assistant Started
+2026-07-07 14:39:57,767 | INFO | User : who are you?
+2026-07-07 14:39:57,770 | INFO | Arnav : I am currently running in offline mode.
+2026-07-07 14:40:11,572 | INFO | User : who is your owner?
+2026-07-07 14:40:11,573 | INFO | Arnav : I am currently running in offline mode.
+2026-07-07 14:42:28,230 | INFO | Assistant Started
+2026-07-07 14:42:34,567 | INFO | User : who are you ?
+2026-07-07 14:42:34,572 | INFO | AFC is enabled with max remote calls: 10.
+2026-07-07 14:42:35,813 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-07 14:42:48,322 | INFO | Assistant Started
+2026-07-07 14:42:53,707 | INFO | User : who are you?
+2026-07-07 14:42:53,709 | INFO | AFC is enabled with max remote calls: 10.
+2026-07-07 14:42:55,654 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-07-07 14:42:55,663 | INFO | Arnav : Hello there! I'm Arnav, an AI assistant. I was created to be helpful and friendly, and I work for anuj. It's a pleasure to meet you!
+2026-07-07 14:43:23,622 | INFO | User : who is your owner?
+2026-07-07 14:43:23,624 | INFO | AFC is enabled with max remote calls: 10.
+2026-07-07 14:43:28,968 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-07-07 14:43:29,245 | INFO | Arnav : My owner is anuj.
+2026-07-07 14:43:47,712 | INFO | User : ha bhai kaise ho 
+2026-07-07 14:43:47,713 | INFO | AFC is enabled with max remote calls: 10.
+2026-07-07 14:43:56,084 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-07-07 14:43:56,086 | INFO | Arnav : Hey anuj! Main bilkul theek hoon, shukriya poochne ke liye.
+
+Ek AI hone ke naate, main hamesha achhe se kaam kar raha hota hoon, toh sab badhiya hai.
+
+Aap kaise hain? Aur bataiye, main aapki kya madad kar sakta hoon?
+2026-07-07 14:47:17,892 | INFO | User : bhai python ke bare me bata na kuch
+2026-07-07 14:47:17,895 | INFO | AFC is enabled with max remote calls: 10.
+2026-07-07 14:47:26,612 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-07-07 14:47:26,616 | INFO | Arnav : Haan bhai anuj, Python ke baare mein zaroor batata hoon.
+
+Python ek bahut hi popular, powerful, aur versatile programming language hai. Iski sabse khaas baat ye hai ki iska syntax bahut hi simple aur padhne mein aasaan hota hai, isliye isse seekhna aur use karna kaafi easy rehta hai, chahe aap beginner ho ya experienced developer.
+
+Kuch mukhya baatein aur uske uses:
+
+1.  **Simple aur Readable Code:** Iski syntax English language se kaafi milti-julti hai, jiski wajah se code likhna aur samajhna bahut aasaan ho jaata hai.
+2.  **Versatility (Bahut Saare Kaam):**
+    *   **Web Development:** Isse aap websites bana sakte ho (jaise Django aur Flask frameworks ka use karke).
+    *   **Data Science aur Machine Learning:** Aajkal ye data analysis, visualization, aur machine learning models banane ke liye sabse zyada use hoti hai (Pandas, NumPy, Scikit-learn, TensorFlow, Keras jaisi libraries ke saath).
+    *   **Automation aur Scripting:** Chhote-mote ya bade automation tasks ke liye ye best hai, jaise files manage karna, data scrape karna, repetitive tasks ko automate karna.
+    *   **Artificial Intelligence (AI):** AI aur deep learning projects mein iska bahut bada role hai.
+    *   **Desktop Applications:** GUI based desktop apps bhi banaye ja sakte hain.
+    *   **Game Development:** Pygame jaisi libraries ke saath simple games bhi banaye ja sakte hain.
+3.  **Badi Library:** Python ki ek bahut badi standard library hai aur hazaaron third-party libraries aur frameworks bhi available hain jo alag-alag tasks ko bahut aasaan bana dete hain.
+4.  **Cross-Platform:** Ye Windows, macOS, Linux jaisi alag-alag operating systems par bina kisi dikkat ke chal jaati hai.
+5.  **Badi Community:** Iski ek bahut badi aur active community hai, toh agar kabhi koi issue aaye toh help milna kaafi aasaan ho jaata hai.
+
+Toh anuj, Python ek aisi language hai jo almost har tarah ke software development ke liye use ho sakti hai. Kya aap iske kisi khaas pehlu ke baare mein aur jaanna chahte ho, jaise ki web development ya data science mein iska use?
