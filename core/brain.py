@@ -7,13 +7,17 @@ from skills.conversation_skill import ConversationSkill
 from skills.system_skill import SystemSkill
 from skills.emotion_skill import EmotionSkill
 from skills.memory_inspector_skill import MemoryInspectorSkill
+from core.context import ContextEngine
+from providers.provider_manager import ProviderManager
 
 class Brain:
     def __init__(self):
         
         self.intent = IntentDetector()
-        self.router = CommandRouter()
+        self.router = CommandRouter()   
         self.memory = MemoryManager()
+        self.context = ContextEngine(self.memory)
+        self.provider = ProviderManager()
         self.skill_manager = SkillManager()
         
         self.skill_manager.register(MemorySkill(self.memory))
@@ -24,6 +28,11 @@ class Brain:
         
     def think(self, user_input):
         self.memory.short.add("user", user_input)
+        
+        last_message = self.context.get_last_message()
+
+        if last_message:
+            print("[Context]", last_message)
         
         try:
             response = self.skill_manager.execute(user_input)
@@ -43,6 +52,11 @@ class Brain:
         except Exception as e:
             print(f"[Router Error] {e}")
             response = "Sorry, I couldn't process that request."
+            
+        if response == "Sorry, I don't understand that command.":
+            response = self.provider.generate(user_input)
+            
         self.memory.short.add("assistant", response)
+
         return response
     

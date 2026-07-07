@@ -1,11 +1,9 @@
-from providers.openai_provider import OpenAIProvider
-
+from providers.offline_provider import OfflineProvider
 
 class ProviderManager:
 
     def __init__(self):
-        self.provider = OpenAIProvider()
+        self.provider = OfflineProvider()
 
-    def ask(self, prompt: str):
-
+    def generate(self, prompt: str):
         return self.provider.generate(prompt)

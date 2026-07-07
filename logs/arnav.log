@@ -250,3 +250,39 @@ Created to become a human-like intelligent assistant.
 2026-07-07 10:29:11,157 | INFO | User :  hello
 2026-07-07 10:29:11,158 | INFO | Arnav : Hello anuj! \U0001f44b
 2026-07-07 10:29:16,917 | INFO | User :  show memory
+2026-07-07 10:29:16,918 | INFO | Arnav : 
+========= MEMORY =========
+
+Short Memory
+------------------
+user : my name is anuj
+assistant : Nice to meet you, anuj! I'll remember your name.
+user :  i am happy today
+assistant : I'm really happy to hear that! \U0001f60a
+user :  hello
+assistant : Hello anuj! \U0001f44b
+user :  show memory
+
+Long Memory
+------------------
+Name : anuj
+
+Emotional Memory
+------------------
+Emotion : happy
+
+==========================
+2026-07-07 10:35:33,258 | INFO | User : "c:\Users\LENOVO\OneDrive\Desktop\python_program\Arnav AI\.venv\Scripts\python.exe" "c:/Users/LENOVO/OneDrive/Desktop/python_program/Arnav AI/main.py"
+2026-07-07 10:35:33,259 | INFO | Arnav : Sorry, I don't understand that command.
+2026-07-07 10:35:42,073 | INFO | Assistant Started
+2026-07-07 10:38:43,824 | INFO | Assistant Started
+2026-07-07 10:38:46,229 | INFO | User : hello
+2026-07-07 10:38:46,232 | INFO | Arnav : Hello anuj! \U0001f44b
+2026-07-07 10:38:49,700 | INFO | User : time
+2026-07-07 10:38:49,701 | INFO | Arnav : 10:38:49 AM
+2026-07-07 10:38:51,912 | INFO | User : date
+2026-07-07 10:38:51,913 | INFO | Arnav : 07-07-2026
+2026-07-07 13:58:00,299 | INFO | Assistant Started
+2026-07-07 13:58:05,729 | INFO | User : hello
+2026-07-07 13:58:05,732 | INFO | Arnav : Hello anuj! \U0001f44b
+2026-07-07 13:58:31,888 | INFO | User : what is Artificial Intelligence?
