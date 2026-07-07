@@ -457,3 +457,42 @@ Tumne pichli baar Python ke baare mein poocha tha. Kya tum uske baare mein aur k
 2026-07-07 15:34:16,812 | INFO | AFC is enabled with max remote calls: 10.
 2026-07-07 15:34:17,309 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
 2026-07-07 15:34:17,311 | INFO | Arnav : I am currently running in offline mode.
+2026-07-07 15:39:13,169 | INFO | Assistant Started
+2026-07-07 15:39:15,345 | INFO | User : hello
+2026-07-07 15:39:15,346 | INFO | Arnav : Hello anuj! \U0001f44b
+2026-07-07 15:39:20,435 | INFO | User : who are you 
+2026-07-07 15:39:20,437 | INFO | AFC is enabled with max remote calls: 10.
+2026-07-07 15:39:21,093 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-07 15:39:21,095 | INFO | Arnav : I am currently running in offline mode.
+2026-07-07 16:53:35,596 | INFO | Assistant Started
+2026-07-07 16:53:37,592 | INFO | User : hello
+2026-07-07 16:53:37,595 | INFO | Arnav : Hello anuj! \U0001f44b
+2026-07-07 16:53:42,080 | INFO | User : who are you 
+2026-07-07 16:53:42,082 | INFO | AFC is enabled with max remote calls: 10.
+2026-07-07 16:53:44,088 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-07-07 16:53:44,093 | INFO | Arnav : Anuj, I'm Arnav! I'm your personal AI assistant, created just for you. How can I help you today?
+2026-07-07 16:58:37,175 | INFO | Assistant Started
+2026-07-07 16:58:39,950 | INFO | User : hello
+2026-07-07 16:58:39,954 | INFO | Arnav : Hello anuj! \U0001f44b
+2026-07-07 16:58:44,486 | INFO | User : who are you?
+2026-07-07 16:58:44,487 | INFO | AFC is enabled with max remote calls: 10.
+2026-07-07 16:58:45,153 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-07 16:58:45,157 | INFO | Arnav : I am currently running in offline mode.
+2026-07-07 17:00:29,485 | INFO | Assistant Started
+2026-07-07 17:00:40,552 | INFO | User : hello
+2026-07-07 17:00:40,553 | INFO | Arnav : Hello anuj! \U0001f44b
+2026-07-07 17:00:45,147 | INFO | User : who are you 
+2026-07-07 17:00:45,148 | INFO | AFC is enabled with max remote calls: 10.
+2026-07-07 17:00:45,837 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-07 17:00:45,839 | INFO | Arnav : I am currently running in offline mode.
+2026-07-07 17:14:41,189 | INFO | Assistant Started
+2026-07-07 17:14:57,559 | INFO | User : my favorite language is python
+2026-07-07 17:14:57,563 | INFO | AFC is enabled with max remote calls: 10.
+2026-07-07 17:15:00,808 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-07-07 17:15:00,816 | INFO | Arnav : That's great, Anuj! Python is a fantastic choice, and honestly, it's a favorite for so many people. Its versatility and readability are really something else.
+
+What is it about Python that you enjoy the most?
+2026-07-07 17:17:42,991 | INFO | User :  i live in Mandla
+2026-07-07 17:17:42,993 | INFO | AFC is enabled with max remote calls: 10.
+2026-07-07 17:17:43,738 | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-07 17:17:43,739 | INFO | Arnav : I am currently running in offline mode.

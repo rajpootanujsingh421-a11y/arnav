@@ -4,8 +4,7 @@ import os
 class LongMemory:
 
     def __init__(self):
-
-        self.file_path = "data/memory.json"
+        
         self.file_path = Config.MEMORY_FILE
 
         if not os.path.exists(self.file_path):

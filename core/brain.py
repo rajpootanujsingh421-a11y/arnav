@@ -11,6 +11,8 @@ from core.context import ContextEngine
 from providers.provider_manager import ProviderManager
 from core.prompt_builder import PromptBuilder
 from personality.personality import Personality
+from core.validator import ResponseValidator
+from memory.extractor import MemoryExtractor
 
 class Brain:
     def __init__(self):
@@ -27,6 +29,8 @@ class Brain:
             self.personality,
             self.context
         )
+        self.validator = ResponseValidator()
+        self.extractor = MemoryExtractor()  
         
         self.skill_manager.register(MemorySkill(self.memory))
         self.skill_manager.register(ConversationSkill(self.memory))
@@ -36,6 +40,12 @@ class Brain:
         
     def think(self, user_input):
         self.memory.short.add("user", user_input)
+        
+        memory = self.extractor.extract(user_input)
+
+        if memory:
+            key, value = memory
+            self.memory.long.save(key, value)
         
         try:
             response = self.skill_manager.execute(user_input)
@@ -59,6 +69,7 @@ class Brain:
         if response == "Sorry, I don't understand that command.":
                 prompt = self.prompt_builder.build(user_input)
                 response = self.provider.generate(prompt)
+                response = self.validator.validate(response)
             
         self.memory.short.add("assistant", response)
 
