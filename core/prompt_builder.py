@@ -7,7 +7,7 @@ class PromptBuilder:
 
     def build(self, user_input):
 
-        name = self.memory.get_name()
+        name = self.memory.get("name")
 
         if not name:
             name = "User"
@@ -18,6 +18,7 @@ class PromptBuilder:
             emotion = "neutral"
 
         history = self.context.get_recent_messages()
+        long_memory = self.memory.long.all()
 
         conversation = ""
 
@@ -28,6 +29,9 @@ class PromptBuilder:
 
         prompt = f"""
         {system_prompt}
+        
+        user Profile:
+        {long_memory}
 
         Current Emotion:
         {emotion}
@@ -37,6 +41,8 @@ class PromptBuilder:
 
         User:
         {user_input}
+        
+        Respond naturally
         """
 
         return prompt
