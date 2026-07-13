@@ -16,6 +16,9 @@ from memory.extractor import MemoryExtractor
 from core.thinking_engine import ThinkingEngine
 from core.response_parser import ResponseParser
 from skills.automation_skill import AutomationSkill
+from agent.planner import Planner
+from agent.executor import Executor
+from agent.local_planner import LocalPlanner
 
 class Brain:
     def __init__(self):
@@ -35,7 +38,10 @@ class Brain:
         self.validator = ResponseValidator()
         self.extractor = MemoryExtractor()  
         self.thinking = ThinkingEngine(self) 
-        self.response_parser = ResponseParser()   
+        self.response_parser = ResponseParser() 
+        self.planner = Planner(self)
+        self.local_planner = LocalPlanner()
+        self.executor = Executor()  
         
         self.skill_manager.register(MemorySkill(self.memory))
         self.skill_manager.register(ConversationSkill(self.memory))
@@ -53,11 +59,6 @@ class Brain:
 
         if memories:
             self.memory.save(memories)
-            
-        response = self.skill_manager.execute(user_input)
-        
-        if response is not None:
-            return response
         
         response = self.thinking.think(user_input)
 

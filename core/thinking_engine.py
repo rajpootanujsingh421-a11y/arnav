@@ -4,7 +4,7 @@ class ThinkingEngine:
         self.brain = brain
 
     def think(self, user_input):
-        
+
         # Skills
         try:
 
@@ -12,7 +12,10 @@ class ThinkingEngine:
 
             if response:
 
-                self.brain.memory.short.add("assistant", response)
+                self.brain.memory.short.add(
+                    "assistant",
+                    response
+                )
 
                 return response
 
@@ -20,6 +23,51 @@ class ThinkingEngine:
 
             print(f"[Skill Error] {e}")
 
+        # Planner (AI Agent)
+        
+        try:
+
+            tasks = self.brain.local_planner.create_plan(user_input)
+
+            if tasks:
+
+                print("⚡ Local Planner")
+
+            response = self.brain.executor.execute(tasks)
+
+            self.brain.memory.short.add(
+                "assistant",
+                response
+            )
+
+            return response
+
+        except Exception as e:
+
+            print(f"[Local Planner Error] {e}")
+
+# Gemini Planner (Fallback)
+        try:
+
+            tasks = self.brain.planner.create_plan(user_input)
+
+            if tasks:
+
+                print("🧠 Gemini Planner")
+
+                response = self.brain.executor.execute(tasks)
+
+                self.brain.memory.short.add(
+                    "assistant",
+                    response
+                )
+
+            return response
+
+        except Exception as e:
+
+            print(f"[Planner Error] {e}")
+            
         # Router
         try:
 
@@ -27,20 +75,20 @@ class ThinkingEngine:
 
             response = self.brain.router.execute(intent)
 
+            if response:
+
+                self.brain.memory.short.add(
+                    "assistant",
+                    response
+                )
+
+                return response
+
         except Exception as e:
 
             print(f"[Router Error] {e}")
 
-            response = None
-            
-        # Router Response
-        if response:
-
-            self.brain.memory.short.add("assistant", response)
-
-            return response
-
-        # AI Thinking
+        # AI Chat
         prompt = self.brain.prompt_builder.build(user_input)
 
         raw_response = self.brain.provider.generate(prompt)
@@ -51,6 +99,9 @@ class ThinkingEngine:
             parsed["response"]
         )
 
-        self.brain.memory.short.add("assistant", response)
+        self.brain.memory.short.add(
+            "assistant",
+            response
+        )
 
         return response

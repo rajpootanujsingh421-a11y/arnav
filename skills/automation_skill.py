@@ -9,28 +9,29 @@ class AutomationSkill:
 
     def handle(self, user_input):
 
-        command = self.auto.parser.parse(user_input)
+        text = user_input.lower().strip()
+
+        command = self.auto.parser.parse(text)
 
         if command is None:
             return None
 
         category, action = command
-#apps
+        
+        # Planner ko handle karne do
+        if (
+            "play" in text
+            or "search" in text
+        ):
+            return None
+
+        
+        # Apps
         if category == "app":
 
-            if action == "chrome":
-                return self.auto.apps.open_chrome()
+            return self.auto.open_app(action)
 
-            elif action == "notepad":
-                return self.auto.apps.open_notepad()
-
-            elif action == "calculator":
-                return self.auto.apps.open_calculator()
-
-            elif action == "paint":
-                return self.auto.apps.open_paint()
-
-#Browser
+        # Browser
         elif category == "browser":
 
             if action == "google":
@@ -38,5 +39,19 @@ class AutomationSkill:
 
             elif action == "youtube":
                 return self.auto.browser.open_youtube()
+
+        # Dynamic Apps
+        elif category == "dynamic_app":
+
+            return self.auto.open_app(action)
+        
+        #folder
+        elif category == "folder":
+            return self.auto.open_folder(action)
+        
+        # File
+        elif category == "file":
+
+            return self.auto.open_file(action)
 
         return None

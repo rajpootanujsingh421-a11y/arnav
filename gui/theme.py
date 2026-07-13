@@ -1,0 +1,17 @@
+# gui/theme.py
+
+BACKGROUND = "#090B12"
+
+CARD = "#11151D"
+
+ACCENT = "#00D9FF"
+
+TEXT = "#FFFFFF"
+
+SECONDARY_TEXT = "#9CA3AF"
+
+SUCCESS = "#00FF88"
+
+WARNING = "#FFD54F"
+
+ERROR = "#FF5252"
