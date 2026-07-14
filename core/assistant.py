@@ -19,6 +19,16 @@ class ArnavAssistant:
         print(f"Version : {self.version}")
         print(f"Status  : {self .status}") 
         
+    def process_command(self, command):
+    
+        logger.info(f"User : {command}")
+
+        response = self.brain.think(command)
+
+        logger.info(f"Arnav : {response}")
+
+        return response
+        
     def start(self):
         self.introduce()
         

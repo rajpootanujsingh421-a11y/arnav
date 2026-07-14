@@ -11,7 +11,7 @@ class MemoryExtractor:
 
         patterns = [
 
-            r"my name is (.+)",
+            r"my name is\s+([A-Za-z ]+)"
             r"i am (.+)",
             r"mera naam (.+) hai",
             r"main (.+) hoon",

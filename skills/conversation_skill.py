@@ -24,6 +24,61 @@ class ConversationSkill:
             "good afternoon",
             "good evening"
         ]
+        
+        status_queries = [
+
+            "how are you",
+            "how are you?",
+            "kaise ho",
+            "kaise ho?",
+            "kaise ho arnav",
+            "kya haal hai",
+            "aur bhai",
+            "aur bhai?",
+            "how's it going",
+            "whats up",
+            "what's up",
+
+        ]
+        
+        thanks_words = [
+
+            "thanks",
+            "thank you",
+            "thankyou",
+            "thx",
+            "shukriya",
+            "dhanyawad",
+            "thank you so much",
+
+        ]
+        
+        bye_words = [
+
+            "bye",
+            "goodbye",
+            "see you",
+            "see you later",
+            "good night",
+            "bye bye",
+            "chal milte hain",
+            "milte hain",
+            "phir milte hain",
+
+        ]
+        
+        identity_questions = [
+
+            "who are you",
+            "who are you?",
+            "tum kaun ho",
+            "tum kaun ho?",
+            "what is your name",
+            "what's your name",
+            "tumhara naam kya hai",
+            "apna introduction do",
+
+        ]
 
         if text in greetings:
 
@@ -36,19 +91,30 @@ class ConversationSkill:
             elif text == "good afternoon":
                 return f"Good afternoon, {self.get_owner()}!"
 
-            return f"Hello {self.get_owner()}! 👋"
+            response = f"Hello {self.get_owner()}! 👋"
 
-        elif text in ["thanks", "thank you"]:
+            return response
 
+        elif text in thanks_words:
+    
             return f"You're always welcome, {self.get_owner()}! 😊"
+        
+        elif text in status_queries:
 
-        elif text in ["how are you", "how are you?"]:
-
-            return f"I'm doing great! Thanks for asking. How are you?"
-
-        elif text in ["bye", "goodbye"]:
-
-            return f"Goodbye {self.get_owner()}! Take care."
+            return f"I'm doing great , {self.get_owner()}! 😊 How are you?"
+        
+        elif text in bye_words:
+    
+            return f"Goodbye {self.get_owner()}! Take care. 👋"
+        
+        elif text in identity_questions:
+    
+            return (
+                f"I am {self.personality.name}, "
+                f"your personal AI assistant. 😊 "
+                f"I'm here to help you with coding, automation, "
+                f"learning, files, and much more."
+            )
         
         elif text == "what is my mood":
             mood = self.memory.emotional.recall("emotion")

@@ -13,6 +13,8 @@ class InputBar(QWidget):
     def __init__(self):
 
         super().__init__()
+        
+        self.send_callback = None
 
         self.build_ui()
 
@@ -38,6 +40,8 @@ class InputBar(QWidget):
         )
 
         self.send_btn = QPushButton("Send")
+        
+        self.send_btn.clicked.connect(self.on_send)
 
         self.send_btn.setStyleSheet(
             f"""
@@ -60,3 +64,17 @@ class InputBar(QWidget):
         layout.addWidget(self.send_btn)
 
         self.setLayout(layout)
+        
+    def get_text(self):
+    
+        return self.input.text()
+
+    def clear(self):
+
+        self.input.clear()
+        
+    def on_send(self):
+    
+        if self.send_callback:
+
+            self.send_callback()

@@ -11,6 +11,7 @@ from gui.theme import *
 from gui.voice_ring import VoiceRing
 from gui.chat_panel import ChatPanel
 from gui.input_bar import InputBar
+from core.assistant import ArnavAssistant
 
 
 class MainWindow(QWidget):
@@ -18,6 +19,7 @@ class MainWindow(QWidget):
     def __init__(self):
 
         super().__init__()
+        self.assistant = ArnavAssistant()
 
         self.setWindowTitle("Arnav AI")
 
@@ -56,9 +58,9 @@ class MainWindow(QWidget):
 
         status = QLabel("STATUS : ONLINE")
         
-        chat = ChatPanel()
+        self.chat = ChatPanel()
         
-        input_bar = InputBar()
+        self.input_bar = InputBar()
 
         status.setAlignment(Qt.AlignCenter)
 
@@ -81,16 +83,32 @@ class MainWindow(QWidget):
 
         layout.addSpacing(25)
 
-        layout.addWidget(chat)
+        layout.addWidget(self.chat)
 
         layout.addSpacing(15)
 
-        layout.addWidget(input_bar)
+        layout.addWidget(self.input_bar)
 
         layout.addStretch()
 
         self.setLayout(layout)
+        
+        self.input_bar.send_callback = self.send_message
+        
+    def send_message(self):
+        
+        text = self.input_bar.get_text().strip()
 
+        if not text:
+            return
+
+        self.chat.add_message("You", text)
+
+        response = self.assistant.process_command(text)
+
+        self.chat.add_message("Arnav", response)
+
+        self.input_bar.clear()
 
 if __name__ == "__main__":
 
@@ -101,3 +119,5 @@ if __name__ == "__main__":
     window.show()
 
     app.exec()
+    
+    

@@ -6,7 +6,6 @@ from PySide6.QtWidgets import (
 
 from gui.theme import *
 
-
 class ChatPanel(QWidget):
 
     def __init__(self):
@@ -41,3 +40,7 @@ class ChatPanel(QWidget):
         layout.addWidget(self.chat)
 
         self.setLayout(layout)
+        
+    def add_message(self, sender, message):
+    
+        self.chat.append(f"<b>{sender} :</b> {message}")
