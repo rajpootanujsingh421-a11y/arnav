@@ -52,24 +52,35 @@ class BrowserAgent:
         self.page.goto(url)
 
         self.page.wait_for_load_state()
+        
+        self.page.wait_for_selector(
+            "a#video-title",
+            timeout=15000
+        )
 
         return f"Searching {query}."
 
     def play_first_video(self):
-
+    
         self.ensure_browser()
 
         self.page.wait_for_selector(
-            "ytd-video-renderer",
-            timeout=10000
+            "a#video-title",
+            timeout=15000
         )
-        
+
         print("Videos found!")
-        self.page.locator(
-            "ytd-video-renderer"
-        ).first.click()
-        
+
+        first_video = self.page.locator("a#video-title").first
+
+        first_video.scroll_into_view_if_needed()
+
+        first_video.click()
+
+        self.page.wait_for_load_state()
+
         print("Clicked First Video")
+
         return "Playing first video."
 
     # Browser Close

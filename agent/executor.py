@@ -13,6 +13,9 @@ class Executor:
         self.google = GoogleAgent(self.browser)
 
     def execute(self, tasks):
+        
+        if not tasks:
+            return None
 
         for task in tasks:
             print("-------------")

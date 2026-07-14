@@ -1,9 +1,11 @@
 from personality.personality import Personality
+from core.text_normalizer import TextNormalizer
 class ConversationSkill:
     
     def __init__(self, memory):
         self.personality = Personality()
         self.memory = memory
+        self.normalizer = TextNormalizer()
         
     def get_owner(self):
         name = self.memory.get_name()
@@ -14,7 +16,7 @@ class ConversationSkill:
         
     def handle(self, user_input):
 
-        text = user_input.strip().lower()
+        text = self.normalizer.normalize(user_input)
 
         greetings = [   
             "hello",

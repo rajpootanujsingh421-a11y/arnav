@@ -5,7 +5,7 @@ class ThinkingEngine:
 
     def think(self, user_input):
 
-        # Skills
+# Skills
         try:
 
             response = self.brain.skill_manager.execute(user_input)
@@ -23,7 +23,7 @@ class ThinkingEngine:
 
             print(f"[Skill Error] {e}")
 
-        # Planner (AI Agent)
+# Planner (AI Agent)
         
         try:
 
@@ -33,14 +33,14 @@ class ThinkingEngine:
 
                 print("⚡ Local Planner")
 
-            response = self.brain.executor.execute(tasks)
+                response = self.brain.executor.execute(tasks)
 
-            self.brain.memory.short.add(
-                "assistant",
-                response
-            )
+                self.brain.memory.short.add(
+                    "assistant",
+                    response
+                )
 
-            return response
+                return response
 
         except Exception as e:
 
@@ -62,13 +62,13 @@ class ThinkingEngine:
                     response
                 )
 
-            return response
+                return response
 
         except Exception as e:
 
             print(f"[Planner Error] {e}")
             
-        # Router
+# Router
         try:
 
             intent = self.brain.intent.detect(user_input)
@@ -88,20 +88,31 @@ class ThinkingEngine:
 
             print(f"[Router Error] {e}")
 
-        # AI Chat
-        prompt = self.brain.prompt_builder.build(user_input)
+# AI Chat
+        try:
 
-        raw_response = self.brain.provider.generate(prompt)
+            prompt = self.brain.prompt_builder.build(user_input)
 
-        parsed = self.brain.response_parser.parse(raw_response)
+            raw_response = self.brain.provider.generate(prompt)
 
-        response = self.brain.validator.validate(
-            parsed["response"]
-        )
+            parsed = self.brain.response_parser.parse(raw_response)
 
-        self.brain.memory.short.add(
-            "assistant",
-            response
-        )
+            response = self.brain.validator.validate(
+                parsed["response"]
+            )
 
-        return response
+            self.brain.memory.short.add(
+                "assistant",
+                response
+            )
+
+            return response
+
+        except Exception as e:
+
+            print(f"[AI Error] {e}")
+
+            return (
+                "Sorry, I'm having trouble connecting right now. "
+                "Please try again in a moment."
+            )
