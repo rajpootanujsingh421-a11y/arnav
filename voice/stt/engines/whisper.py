@@ -12,7 +12,7 @@ class WhisperSTT(BaseSTT):
         self.model = WhisperModel(
             "small",
             device="cpu",
-            compute_type="int8"
+            compute_type="int8" 
         )
 
         print("Whisper Ready.")
@@ -23,7 +23,8 @@ class WhisperSTT(BaseSTT):
             audio_path,
             beam_size=5,
             vad_filter=True,
-            condition_on_previous_text=False
+            condition_on_previous_text=False,
+            language="hi"
         )
 
         text = ""

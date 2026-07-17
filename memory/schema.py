@@ -22,6 +22,23 @@ class MemorySchema:
         "hobby",
 
         "profession"
+        
+        "likes",
+        "dislikes",
+
+        "favorite_editor",
+
+        "os",
+
+        "github",
+
+        "skills",
+
+        "routine",
+
+        "workout",
+
+        "current_project"
     }
 
     @classmethod

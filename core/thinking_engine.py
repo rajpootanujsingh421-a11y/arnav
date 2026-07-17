@@ -4,8 +4,38 @@ class ThinkingEngine:
         self.brain = brain
 
     def think(self, user_input):
+        
+        user_input = self.brain.context_resolver.resolve(
+            user_input
+        )
 
-# Skills
+        # Intent Detection
+        intent = self.brain.detector.detect(user_input)
+
+        # Skill Router
+        skill = self.brain.skill_router.get(intent)
+
+        if skill:
+
+            response = skill.handle(user_input)
+
+            if response:
+
+                self.brain.memory.short.add(
+                    "assistant",
+                    response
+                )
+
+                self.brain.context.update(
+                    intent,
+                    skill.__class__.__name__,
+                    user_input,
+                    response
+                )
+
+                return response
+
+        # Remaining Skill
         try:
 
             response = self.brain.skill_manager.execute(user_input)
@@ -17,26 +47,37 @@ class ThinkingEngine:
                     response
                 )
 
+                self.brain.context.update(
+                    intent,
+                    "SkillManager",
+                    user_input,
+                    response
+                )
+
                 return response
 
         except Exception as e:
 
             print(f"[Skill Error] {e}")
 
-# Planner (AI Agent)
-        
+        # Local Planner
         try:
 
             tasks = self.brain.local_planner.create_plan(user_input)
 
             if tasks:
 
-                print("⚡ Local Planner")
-
                 response = self.brain.executor.execute(tasks)
 
                 self.brain.memory.short.add(
                     "assistant",
+                    response
+                )
+
+                self.brain.context.update(
+                    intent,
+                    "LocalPlanner",
+                    user_input,
                     response
                 )
 
@@ -46,14 +87,12 @@ class ThinkingEngine:
 
             print(f"[Local Planner Error] {e}")
 
-# Gemini Planner (Fallback)
+        # Gemini Planner
         try:
 
             tasks = self.brain.planner.create_plan(user_input)
 
             if tasks:
-
-                print("🧠 Gemini Planner")
 
                 response = self.brain.executor.execute(tasks)
 
@@ -62,23 +101,37 @@ class ThinkingEngine:
                     response
                 )
 
+                self.brain.context.update(
+                    intent,
+                    "Planner",
+                    user_input,
+                    response
+                )
+
                 return response
 
         except Exception as e:
 
             print(f"[Planner Error] {e}")
-            
-# Router
+
+        # Command Router
         try:
 
-            intent = self.brain.intent.detect(user_input)
+            command = self.brain.intent.detect(user_input)
 
-            response = self.brain.router.execute(intent)
+            response = self.brain.router.execute(command)
 
             if response:
 
                 self.brain.memory.short.add(
                     "assistant",
+                    response
+                )
+
+                self.brain.context.update(
+                    intent,
+                    "CommandRouter",
+                    user_input,
                     response
                 )
 
@@ -88,14 +141,33 @@ class ThinkingEngine:
 
             print(f"[Router Error] {e}")
 
-# AI Chat
+        # Offline Brain
+        response = self.brain.offline.reply(intent)
+
+        if response:
+
+            self.brain.memory.short.add(
+                "assistant",
+                response
+            )
+
+            self.brain.context.update(
+                intent,
+                "OfflineBrain",
+                user_input,
+                response
+            )
+
+            return response
+
+        # AI Chat
         try:
 
             prompt = self.brain.prompt_builder.build(user_input)
 
-            raw_response = self.brain.provider.generate(prompt)
+            raw = self.brain.provider.generate(prompt)
 
-            parsed = self.brain.response_parser.parse(raw_response)
+            parsed = self.brain.response_parser.parse(raw)
 
             response = self.brain.validator.validate(
                 parsed["response"]
@@ -106,13 +178,17 @@ class ThinkingEngine:
                 response
             )
 
+            self.brain.context.update(
+                intent,
+                "AI",
+                user_input,
+                response
+            )
+
             return response
 
-        except Exception as e:
-
-            print(f"[AI Error] {e}")
+        except Exception:
 
             return (
-                "Sorry, I'm having trouble connecting right now. "
-                "Please try again in a moment."
+                "Sorry, I'm having trouble connecting right now."
             )

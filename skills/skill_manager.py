@@ -10,6 +10,12 @@ class SkillManager:
 
         for skill in self.skills:
 
+# ConversationSkill ko skip karo
+            if skill.__class__.__name__ == "ConversationSkill":
+                continue
+
+            print(f"Running Skill -> {skill.__class__.__name__}")
+
             response = skill.handle(user_input)
 
             if response is not None:

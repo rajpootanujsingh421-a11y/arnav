@@ -3,13 +3,13 @@ from voice.stt.engines.whisper import WhisperSTT
 
 
 class STTManager:
-
+    
     def __init__(self):
 
         self.sense = SenseVoiceSTT()
         self.whisper = WhisperSTT()
 
-        self.primary = "sense"
+        self.primary = "whisper"
 
     def transcribe(self, audio_path):
 

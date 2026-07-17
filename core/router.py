@@ -1,7 +1,7 @@
-from commands import hello, time, date, exit, unknown
+from commands import hello, time, date, exit
 
 
-class CommandRouter:    
+class CommandRouter:
 
     def execute(self, command: str):
 
@@ -14,6 +14,9 @@ class CommandRouter:
             "exit": exit.execute,
         }
 
-        action = routes.get(command, unknown.execute)
+        action = routes.get(command)
 
-        return action()
+        if action:
+            return action()
+
+        return None

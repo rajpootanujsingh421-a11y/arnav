@@ -5,32 +5,46 @@ class EmotionSkill:
 
     def handle(self, user_input):
 
-        text = user_input.lower()
+        text = user_input.lower().strip()
 
-        happy_words = [
+        happy_words = {
             "happy",
             "great",
             "awesome",
             "excited",
-            "good"
-        ]
+            "fantastic",
+            "amazing"
+        }
 
-        sad_words = [
+        sad_words = {
             "sad",
             "upset",
             "depressed",
             "cry",
             "bad"
-        ]
+        }
 
-        for word in happy_words:
-            if word in text:
-                self.memory.emotional.remember("emotion", "happy")
-                return "I'm really happy to hear that! 😊"
+        words = set(text.split())
 
-        for word in sad_words:
-            if word in text:
-                self.memory.emotional.remember("emotion", "sad")
-                return "I'm sorry you're feeling that way. I'm here for you. 💙"
+        if words & happy_words:
+
+            self.memory.emotional.remember(
+                "emotion",
+                "happy"
+            )
+
+            return "I'm really happy to hear that! 😊"
+
+        if words & sad_words:
+
+            self.memory.emotional.remember(
+                "emotion",
+                "sad"
+            )
+
+            return (
+                "I'm sorry you're feeling that way. "
+                "I'm here for you. 💙"
+            )
 
         return None
